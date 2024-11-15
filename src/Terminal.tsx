@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { executeCommand } from './wasmHelper';
+import { executeCommand } from './wasmHelper'; // Função para chamar o WebAssembly
 import './styles/Terminal.scss';
 
 const Terminal: React.FC = () => {
-    const [input, setInput] = useState<string>('');
-    const [output, setOutput] = useState<string[]>([]);
-    const inputRef = useRef<HTMLInputElement>(null);
+    const [input, setInput] = useState<string>(''); // Estado para armazenar o comando de entrada
+    const [output, setOutput] = useState<string[]>([]); // Estado para armazenar a saída do terminal
+    const [currentDirectory, setCurrentDirectory] = useState<string>('home'); // Diretório atual
+    const inputRef = useRef<HTMLInputElement>(null); // Referência para o input
 
     useEffect(() => {
-        // Coloca o foco no input assim que o componente for montado
-        inputRef.current?.focus();
+        inputRef.current?.focus(); // Coloca o foco no input assim que o componente é montado
     }, []);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,22 +18,40 @@ const Terminal: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        // Para enviar o comando para o WebAssembly
         if (input.trim()) {
             try {
-                // Chama a função call_function no WebAssembly e passa o comando
-                const result = await executeCommand(input);
-                setOutput([...output, `> ${input}`, result]);
+                const result = await executeCommand(input); // Executa o comando via WebAssembly
+
+                setOutput((prevOutput) => [
+                    ...prevOutput,
+                    `> ${input}`, // Exibe o comando no terminal
+                    result,
+                ]);
+
+                
+                if (input.startsWith('cd')) {
+                    const parts = input.split(' ');
+                    if (parts.length > 1) {
+                        setCurrentDirectory(parts[1]);
+                    }
+                } 
             } catch (error) {
-                // Afirmando que o tipo de erro é 'Error'
                 if (error instanceof Error) {
-                    setOutput([...output, `> ${input}`, `Error: ${error.message}`]);
+                    setOutput((prevOutput) => [
+                        ...prevOutput,
+                        `> ${input}`,
+                        `Error: ${error.message}`,
+                    ]);
                 } else {
-                    setOutput([...output, `> ${input}`, "Unknown error"]);
+                    setOutput((prevOutput) => [
+                        ...prevOutput,
+                        `> ${input}`,
+                        'Unknown error',
+                    ]);
                 }
             }
         }
-        setInput('');  // Limpa o input após o envio do comando
+        setInput(''); // Limpa o campo de entrada após o comando
     };
 
     return (
@@ -45,10 +63,12 @@ const Terminal: React.FC = () => {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    {/* '$' para simular o bash*/}
-                    <span className="bash-symbol">$ </span>
+                    <span className="bash-symbol inline whitespace-nowrap">
+                        {/* Mostra o diretório atual antes do prompt */}
+                        {` ${currentDirectory} $ `}
+                    </span>
                     <input 
-                        ref={inputRef}  // Referência para o input
+                        ref={inputRef}
                         type="text"
                         className="input"
                         value={input}
