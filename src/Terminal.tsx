@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { executeCommand } from './wasmHelper';
 import './styles/Terminal.scss';
 
 const Terminal: React.FC = () => {
     const [input, setInput] = useState<string>('');
     const [output, setOutput] = useState<string[]>([]);
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        // Coloca o foco no input assim que o componente for montado
+        inputRef.current?.focus();
+    }, []);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value);
@@ -12,10 +18,10 @@ const Terminal: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        // para enviar o comando para o WebAssembly
+        // Para enviar o comando para o WebAssembly
         if (input.trim()) {
             try {
-                // chama a função call_function no WebAssembly e passa o comando
+                // Chama a função call_function no WebAssembly e passa o comando
                 const result = await executeCommand(input);
                 setOutput([...output, `> ${input}`, result]);
             } catch (error) {
@@ -27,9 +33,8 @@ const Terminal: React.FC = () => {
                 }
             }
         }
-        setInput('');
+        setInput('');  // Limpa o input após o envio do comando
     };
-    
 
     return (
         <div className="terminal">
@@ -39,13 +44,18 @@ const Terminal: React.FC = () => {
                 ))}
             </div>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    className="input"
-                    value={input}
-                    onChange={handleInputChange}
-                    placeholder="Digite um comando"
-                />
+                <div className="input-container">
+                    {/* '$' para simular o bash*/}
+                    <span className="bash-symbol">$ </span>
+                    <input 
+                        ref={inputRef}  // Referência para o input
+                        type="text"
+                        className="input"
+                        value={input}
+                        onChange={handleInputChange}
+                        placeholder=""
+                    />
+                </div>
             </form>
         </div>
     );

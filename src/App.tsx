@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <h1 className="text-zinc-100 pl-2 bg-zinc-950">{message}</h1>
       <Terminal />
     </div>
   );
