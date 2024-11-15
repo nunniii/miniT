@@ -1,9 +1,5 @@
 ![GitHub License](https://img.shields.io/github/license/nunniii/tasksToDo) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 48c424a8c8665ae3958d22540c0aa3a2319415eb
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
