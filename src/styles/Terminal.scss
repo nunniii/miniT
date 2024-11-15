@@ -1,0 +1,37 @@
+.terminal {
+    background-color: black;
+    color: #33ff33;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .output {
+        flex-grow: 1;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .line {
+        margin: 5px 0;
+    }
+
+    .input {
+        background-color: black;
+        color: #33ff33;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .input:focus {
+        border: 1px solid #33ff33;
+    }
+}
