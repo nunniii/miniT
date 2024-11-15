@@ -1,1 +1,109 @@
+                       GNU GENERAL PUBLIC LICENSE
+                           Version 2, June 1991
 
+Copyright (C) 2024 Free Software Foundation, Inc.
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+              Preamble
+
+The GNU General Public License is a free software license that guarantees
+end users the freedom to run, study, share, and modify the software. Under
+this license, software is free, but it also requires that any derivative work
+be released under the same license. This is called "copyleft". The GPL was
+written by Richard Stallman of the Free Software Foundation (FSF).
+
+The general public licenses are intended to guarantee your freedom to share
+and change all versions of a program—to make sure it remains free software
+for all its users. We, the Free Software Foundation, use the GPL for most of
+our software; it applies also to any other program whose authors commit to
+using it. (If a program is released under the GPL, that means you have the
+freedom to copy, distribute, and modify it, subject to the conditions we
+set forth in the license.)
+
+  1. You may copy and distribute verbatim copies of the Program's source code
+     as you receive it, in any medium, provided that you conspicuously and
+     appropriately publish on each copy an appropriate copyright notice and
+     disclaimer of warranty; keep intact all the notices that refer to this
+     License and to the absence of any warranty; and give any other recipients
+     of the Program a copy of this License along with the Program.
+
+  2. You may modify your copy or copies of the Program or any portion of it,
+     thus forming a work based on the Program, and copy and distribute such
+     modifications or work under the terms of Section 1 above, provided that
+     you also meet all of these conditions:
+     a) You must cause the modified files to carry prominent notices stating
+        that you changed the files and the date of any change.
+     b) You must cause the whole work to be licensed at no charge to all third
+        parties under the terms of this License.
+     c) If the modified program normally reads commands interactively when run,
+        you must cause it, when started running for such interactive use in the
+        most ordinary way, to print or display an announcement including an
+        appropriate copyright notice and a notice that there is no warranty
+        (or else, saying that you provide the software under another, different
+        warranty), and that users may redistribute it under these terms.
+
+  3. You may not copy, modify, sublicense, or distribute the Program except
+     as expressly provided under this License. Any attempt to do so is void,
+     and will automatically terminate your rights under this License. However,
+     parties who have received copies, or rights, from you under this License
+     will not have their licenses terminated so long as such parties remain in
+     full compliance.
+
+  4. You are not required to accept this License, since you have not signed
+     it. However, nothing else grants you permission to modify or distribute
+     the Program or its derivative works. These actions are prohibited by law
+     if you do not accept this License. Therefore, by modifying or distributing
+     the Program (or any work based on the Program), you indicate your acceptance
+     of this License to do so, and all its terms and conditions.
+
+  5. Each time you redistribute the Program (or any work based on the Program),
+     the recipient automatically receives a license from the original licensor
+     to copy, distribute or modify the Program subject to these terms and conditions.
+     You may not impose any further restrictions on the recipients' exercise of
+     the rights granted herein.
+
+  6. If you distribute the Program or any derivative work, you must provide
+     the complete corresponding source code, including any scripts used to
+     control the compilation and installation of the executable. However, the
+     source code need not include anything that is normally distributed (in
+     either source or binary form) with the major components (such as compilers,
+     window systems, and many libraries) of the operating system on which the
+     Program is intended to run. For example, if the Program is a library
+     that is intended to be linked with other libraries or applications to form
+     executable programs, you do not have to distribute the source code of
+     those other libraries or applications, but you must comply with the terms
+     of this License for the Program.
+
+  7. If you modify the Program, and distribute it, you must mark it in such a
+     way that it is distinct from the original version, so that it is clear
+     that the modified program is not the original one.
+
+  8. The name of the Free Software Foundation or the name of any other
+     organization, institution, or individual, should not be used to endorse
+     or promote any program derived from this software without proper written
+     permission.  
+
+  9. This License does not grant you permission to use the trade names, trademarks,
+     service marks, or product names of the Free Software Foundation, except as
+     required for describing the origin of the Program and reproducing the content
+     of the NOTICE file.
+
+  10. If you do not want the conditions of this License to apply to your
+      modifications, you can remove the GPL License from your modifications
+      and relicense your code under a different license (such as a commercial license).
+
+   11. **No warranty**. THE PROGRAM IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+       ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+       SEE THE GNU GENERAL PUBLIC LICENSE FOR THE FULL TEXT OF THE WARRANTY
+       DISCLAIMER.
+
+   12. **Termination**. This License and the rights granted hereunder will
+       terminate automatically if you violate any of its terms. However, if
+       you cure the violation within thirty days after becoming aware of it,
+       your license may be reinstated.
+
+       END OF TERMS AND CONDITIONS
