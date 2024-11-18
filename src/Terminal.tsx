@@ -1,11 +1,11 @@
 // Terminal.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Command } from './wasmHelper'; // função para chamar o wasm
-import { loadFilesystem } from './filesystem'; // importações relacionadas ao filesystem
+
 import './styles/Terminal.scss';
 
 // #arch
-// -- Exemplo de código:  d|name|{ d|test|{  a|hello.txt|{this is the string of here}  } a|hi.txt|{string hi} }
+// -- Exemplo de código:  % a|hello.txt|{this is the string of here} a|hi.txt|{string hi} }
 //
 // -- Estrutura::     
 //     /name
@@ -14,7 +14,7 @@ import './styles/Terminal.scss';
 //      hi.txt
 //
 // 🦄 segue a declaração inicial:
-export let path = "p{/home/uwu} c{cd}{/path/este/path} % d|name|{ d|test|{  a|hello.txt|{this is the string of here}  } a|hi.txt|{string hi}";
+export let path = "% a|hello.txt|{this is the string of here} a|hi.txt|{string hi} }";
 
 const Terminal: React.FC = () => {
     const [input, setInput] = useState<string>(''); // Estado para armazenar o comando de entrada
