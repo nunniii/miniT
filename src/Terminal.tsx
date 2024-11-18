@@ -91,7 +91,7 @@ const Terminal: React.FC = () => {
                     result,
                 ]);
 
-                if (input.startsWith('cd')) {
+                if (input.startsWith('cdo')) {
                     const parts = input.split(' ');
                     if (parts.length > 1) {
                         setCurrentPathToShow(parts[1]);
